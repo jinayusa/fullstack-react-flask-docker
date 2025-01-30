@@ -1,0 +1,23 @@
+services:
+  # Frontend service configuration
+  frontend:
+    build:
+      context: .  # Set the build context to the current directory (root of the project)
+      dockerfile: Dockerfile  # Specify the Dockerfile for building the frontend image
+    ports:
+      - "3000:3000"  # Expose port 3000 of the container to port 3000 of the host machine
+    depends_on:
+      - backend  # Ensure the frontend starts after the backend service is ready
+    volumes:
+      - ./src:/app/src  # Mount the local 'src' folder into the container to allow live editing
+      - /app/node_modules  # Avoid mounting the 'node_modules' folder from the host (use container's node_modules)
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Enable polling for file change detection in development environment
+
+  # Backend service configuration
+  backend:
+    build:
+      context: ./backend  # Set the build context to the 'backend' directory
+      dockerfile: Dockerfile  # Specify the Dockerfile for building the backend image
+    ports:
+      - "5001:5001"  # Expose port 5001 of the container to port 5001 of the host machine

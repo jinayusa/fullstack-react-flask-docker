@@ -1,0 +1,84 @@
+/* Header styles */
+.header {
+  background-color: #000000;  /* Black background for the header */
+  color: white;  /* White text for contrast */
+  padding: 20px 0; /* Vertical padding for spacing */
+  text-align: center; /* Center-aligns the header text */
+  display: flex; /* Flexbox layout for center alignment */
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  flex-direction: column; /* Stacks the child elements vertically */
+}
+
+nav ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Uses flexbox for horizontal navigation items */
+  justify-content: center; /* Centers the navigation items */
+}
+
+nav ul li {
+  margin: 0 15px; /* Adds spacing between list items */
+}
+
+nav ul li a {
+  color: white; /* White text color for links */
+  text-decoration: none; /* Removes underline from links */
+  font-size: 18px; /* Sets font size for links */
+}
+
+nav ul li a:hover {
+  text-decoration: underline; /* Underlines links when hovered */
+}
+
+/* Gray Search Bar Styles */
+.search-container {
+  display: flex; /* Flexbox layout to align the search bar */
+  justify-content: center; /* Centers the search bar horizontally */
+  margin-top: 5px; /* Adds space between header and search bar */
+  position: relative; /* Positions the icon inside the container */
+}
+
+.search-bar {
+  width: 70%; /* Sets the width of the search bar */
+  max-width: 600px; /* Limits the maximum width of the search bar */
+  padding: 12px 40px 12px 20px; /* Adds padding, including extra space for icon */
+  font-size: 16px; /* Sets font size for text inside the search bar */
+  border: 2px solid #bdc3c7; /* Adds a light gray border around the search bar */
+  border-radius: 30px; /* Rounds the corners for a smooth look */
+  outline: none; /* Removes default outline */
+  background: #ecf0f1; /* Light gray background color */
+  color: #2c3e50; /* Dark gray text color */
+  transition: all 0.3s ease; /* Smooth transition for interactive states */
+  margin-bottom: 5px; /* Adds space below the search bar */
+}
+
+.search-bar:focus {
+  border-color: #7f8c8d; /* Darker gray border when focused */
+  background: #ffffff; /* White background when focused */
+  box-shadow: 0 0 8px rgba(103, 119, 134, 0.6); /* Soft glow effect on focus */
+}
+
+.search-bar::placeholder {
+  color: #7f8c8d; /* Light gray placeholder text */
+  font-style: italic; /* Italicize the placeholder text */
+}
+
+.search-bar-icon {
+  position: absolute; /* Position the icon inside the search bar */
+  top: 50%; /* Vertically centers the icon */
+  left: 15px; /* Positions the icon on the left */
+  transform: translateY(-50%); /* Adjusts for vertical centering */
+  color: #7f8c8d; /* Icon color matches the placeholder text */
+  font-size: 20px; /* Sets font size for the icon */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.search-bar:hover .search-bar-icon {
+  color: #2c3e50; /* Changes icon color to dark gray on hover */
+}
+
+/* Animation for the search bar icon */
+.search-bar:focus + .search-bar-icon {
+  transform: translateY(-50%) scale(1.1); /* Slightly enlarges the icon on focus */
+}
